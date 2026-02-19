@@ -12,6 +12,6 @@ test('Reveal secret message', async ({ page }) => {
   await page.click('#secret-button');
 
   // 4. Verify message is VISIBLE after clicking the button
-  await expect(hmessage).toBeVisible();
+  await expect(message).toBeVisible();
   await expect(message).toHaveText('Playwright found me!');
 });
