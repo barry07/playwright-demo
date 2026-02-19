@@ -5,7 +5,7 @@ test('Reveal secret message', async ({ page }) => {
   await page.goto('http://localhost:8080');
 
   // 2. Verify message is HIDDEN at first
-  const hmessage = page.locator('#message');
+  const message = page.locator('#message');
   await expect(message).toBeHidden();
 
   // 3. Click the button to reveal the message
