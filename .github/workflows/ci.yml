@@ -1,0 +1,25 @@
+name: CI Pipeline
+on: [push] # Trigger the workflow on push events to any branch
+
+jobs:
+  build and test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker
+        run: docker build -t my-app .
+
+      - name: Spin up Container
+        run: docker run -d -p 8080:80
+--name: test-app my-app
+
+      - name: install node & playwright
+        uses: actions/setup-node@v4
+      - run: npm install
+      -run: npx playwright install
+--with-deps
+
+      - name: Run tests
+        run: npx playwright test
