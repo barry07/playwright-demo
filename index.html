@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1 id="status">CI/CD Pipeline active.</h1>
-<p>Environment: Docker Container</p>
+    <h1>CI/CD Pipeline Active</h1>
+    <button id="secret-button">Reveal Secret</button>
+    <p id="message" style="display:none;">Playwright found me!</p>
+
+    <script>
+        document.getElementById('secret-button').onclick = function() {
+            document.getElementById('message').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
